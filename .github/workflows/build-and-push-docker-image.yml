@@ -38,5 +38,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./http-server
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd:latest
+          tags: ${{  secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd:latest
           push: true

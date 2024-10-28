@@ -24,10 +24,10 @@ jobs:
           java-version: "17"
 
       - name: Build, test, and analyze with SonarCloud
-        run: mvn -B verify sonar:sonar \
-          -Dsonar.projectKey=michi-mourchid_devops-livecoding \
-          -Dsonar.organization=michi-mourchid \
-          -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
+        run: mvn -B verify sonar:sonar 
+          -Dsonar.projectKey=michi-mourchid_devops-livecoding 
+          -Dsonar.organization=michi-mourchid 
+          -Dsonar.host.url=https://sonarcloud.io
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           --file ./simple-api/pom.xml
         working-directory: ./simple-api

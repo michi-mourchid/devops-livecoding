@@ -3,7 +3,7 @@
 - name: Launch HTTP server container
   docker_container:
     name: http_server
-    image: moutuidine/tp-devops-http
+    image: moutuidine/tp-devops-httpd
     ports:
       - "80:80"
     networks:

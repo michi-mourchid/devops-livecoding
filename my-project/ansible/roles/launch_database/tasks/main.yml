@@ -1,0 +1,11 @@
+---
+# roles/launch_database/tasks/main.yml
+
+- name: Run Database
+  docker_container:
+    name: my_database
+    image: tp-devops-database
+    state: started
+    env:
+      DB_USER: user
+      DB_PASS: password

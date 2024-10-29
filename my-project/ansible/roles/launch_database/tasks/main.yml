@@ -1,11 +1,14 @@
 ---
 # roles/launch_database/tasks/main.yml
 
-- name: Run Database
+- name: Launch database container
   docker_container:
-    name: my_database
-    image: tp-devops-database
-    state: started
+    name: my-db
+    image: moutuidine/tp-devops-database
     env:
-      DB_USER: user
-      DB_PASS: password
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pwd
+      POSTGRES_DB: db
+    networks:
+      - name: my-network
+    restart_policy: always

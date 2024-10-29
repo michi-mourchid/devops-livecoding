@@ -1,2 +1,11 @@
 ---
 # tasks file for roles/launch_proxy
+- name: Launch HTTP server container
+  docker_container:
+    name: http_server
+    image: moutuidine/tp-devops-http
+    ports:
+      - "80:80"
+    networks:
+      - name: my-network
+    restart_policy: always

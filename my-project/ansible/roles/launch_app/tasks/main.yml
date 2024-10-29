@@ -1,9 +1,7 @@
----
-# roles/launch_app/tasks/main.yml
-- name: Run HTTPD
+- name: Launch application container
   docker_container:
-    name: httpd
-    image: tp-devops-httpd
-    state: started
-    env:
-      VAR_NAME: value  # Add environment variables as needed
+    name: my-api
+    image: moutuidine/tp-devops-simple-api
+    networks:
+      - name: my-network
+    restart_policy: always
